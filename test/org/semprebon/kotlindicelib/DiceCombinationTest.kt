@@ -1,9 +1,8 @@
 package org.semprebon.kotlindicelib
 
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 import org.semprebon.kotlindicelib.TestSupport.Companion.ERR
-import org.semprebon.kotlindicelib.*
 
 /**
  * Test for DiceCombination
@@ -65,7 +64,7 @@ class DiceCombinationTest : TestSupport {
     fun roll() {
         for (i in 1..10) {
             val r = dice.roll()
-            assertTrue("$r between 2 and 12", r.value in 2..12)
+            assertTrue(r.value in 2..12, "$r between 2 and 12")
         }
     }
 
@@ -155,33 +154,29 @@ class DiceCombinationTest : TestSupport {
 
     @Test
     fun memoryPerformanceOfProbabilitiesByValue() {
-        var values: Map<Int, Double>? = null
-        val dice = DiceCombination(listOf(dx6, dx6, dx6, dx6), SumAggregator())
-        val range = dice.range(0.8)
+        val range = DiceCombination(listOf(dx6, dx6, dx6, dx6), SumAggregator()).range(0.8)
 
-        values = verifyMemoryUse(30*1024, {
+        verifyMemoryUse(30*1024, {
             val dice = DiceCombination(listOf(dx6, dx6, dx6), SumAggregator())
             dice.probabilitiesByValue(range,
                     endCondition = dice.totalProbabilityOf(0.90))
-        }) as Map<Int, Double>
+        })
     }
 
     @Test
     fun speedPerformanceOfLikelyRange() {
-        var values: IntRange? = null
-        values = verifySpeed(0.1, {
+        verifySpeed(0.1, {
             val dice = DiceCombination(listOf(dx6, dx6, dx6, dx6), SumAggregator())
             dice.range(0.90)
-        }) as IntRange
+        })
     }
 
     @Test
     fun memoryPerformanceOfLikelyRange() {
-        var values: IntRange? = null
-        values = verifyMemoryUse(1024, {
+        verifyMemoryUse(1024, {
             val dice = DiceCombination(listOf(dx6, dx6, dx6, dx6), SumAggregator())
             dice.range(0.90)
-        }) as IntRange
+        })
     }
 
     // Equality tests

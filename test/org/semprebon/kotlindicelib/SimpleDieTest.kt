@@ -1,11 +1,8 @@
 package org.semprebon.kotlindicelib
 
-import org.junit.Test
-import org.junit.Assert.*
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 import org.semprebon.kotlindicelib.TestSupport.Companion.ERR
-import org.semprebon.kotlindicelib.ExplodingDie
-import org.semprebon.kotlindicelib.Probability
-import org.semprebon.kotlindicelib.SimpleDie
 
 /**
  * Test for SimpleDie
@@ -53,7 +50,7 @@ class SimpleDieTest {
     fun roll() {
         for (i in 1..10) {
             val r = d6.roll().value
-            assertTrue("$r is between 1 and 6", r in 1..6)
+            assertTrue(r in 1..6, "$r is between 1 and 6")
         }
     }
 

@@ -1,8 +1,7 @@
 package org.semprebon.kotlindicelib
 
-import junit.framework.Assert.assertEquals
-import org.junit.Test
-import org.semprebon.kotlindicelib.Permutator
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for Permutator
@@ -49,7 +48,6 @@ class PermutatorTest : TestSupport {
 
     @Test
     fun ReturnsPermutationsFromStartingValues() {
-        var total = 0
         val permutator = Permutator(listOf(0..2, 0..2), startAt = listOf(1,1))
         assertEquals(
                 listOf(listOf(1,1),

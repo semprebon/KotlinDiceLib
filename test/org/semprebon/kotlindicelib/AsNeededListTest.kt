@@ -1,8 +1,7 @@
 package org.semprebon.kotlindicelib
 
-import junit.framework.Assert.assertEquals
-import org.junit.Test
-import org.semprebon.kotlindicelib.AsNeededList
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for AsNeededList

@@ -1,8 +1,8 @@
 package org.semprebon.kotlindicelib
 
-import org.junit.Test
-import org.junit.Assert.*
-import org.semprebon.kotlindicelib.Probability
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertTrue
 
 /**
  * Test for Probability
@@ -10,7 +10,7 @@ import org.semprebon.kotlindicelib.Probability
 class ProbabilityTest {
     companion object {
         fun assertNearlyEqual(expected: Double, actual: Double) {
-            assertTrue("$actual should equal $expected", Math.abs(actual - expected) < 0.00001)
+            assertTrue(Math.abs(actual - expected) < 0.00001, "$actual should equal $expected")
         }
     }
 
@@ -49,17 +49,17 @@ class ProbabilityTest {
 
     @Test
     fun andWithList() {
-        assertNearlyEqual(0.06, Probability.Companion.and(listOf(p, q)).value)
+        assertNearlyEqual(0.06, Probability.and(listOf(p, q)).value)
     }
 
     @Test
     fun orWithList() {
-        assertNearlyEqual(0.44, Probability.Companion.or(listOf(p, q)).value)
+        assertNearlyEqual(0.44, Probability.or(listOf(p, q)).value)
     }
 
     @Test
     fun sumWithList() {
-        assertNearlyEqual(0.5, Probability.Companion.sum(listOf(p, q)).value)
+        assertNearlyEqual(0.5, Probability.sum(listOf(p, q)).value)
     }
 
     @Test

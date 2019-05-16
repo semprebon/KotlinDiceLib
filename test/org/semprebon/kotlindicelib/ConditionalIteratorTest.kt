@@ -1,8 +1,7 @@
 package org.semprebon.kotlindicelib
 
-import junit.framework.Assert.*
-import org.junit.Test
-import org.semprebon.kotlindicelib.FilterIterator
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 /**
  * Test for ConditionalIterator

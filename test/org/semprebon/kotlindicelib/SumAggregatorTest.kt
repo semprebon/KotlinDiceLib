@@ -1,9 +1,8 @@
 package org.semprebon.kotlindicelib
 
-import org.junit.Assert.*
-import org.junit.Test
-import org.semprebon.kotlindicelib.SimpleDie
-import org.semprebon.kotlindicelib.SumAggregator
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Test
 
 /**
  * Test for SumAggregator

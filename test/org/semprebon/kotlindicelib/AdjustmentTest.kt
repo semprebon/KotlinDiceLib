@@ -1,8 +1,7 @@
 package org.semprebon.kotlindicelib
 
-import junit.framework.Assert.assertEquals
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for Adjustment
@@ -37,11 +36,11 @@ class AdjustmentTest {
 
     @Test
     fun range() {
-        Assert.assertEquals(3..3, adjustment.range(0.01))
+        assertEquals(3..3, adjustment.range(0.01))
     }
 
     @Test
     fun expectedValueIsCorrect() {
-        Assert.assertEquals(3.0, adjustment.expectedValue, TestSupport.ERR)
+        assertEquals(3.0, adjustment.expectedValue, TestSupport.ERR)
     }
 }

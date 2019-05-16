@@ -1,8 +1,8 @@
 package org.semprebon.kotlindicelib
 
-import org.junit.Test
-import org.junit.Assert.*
-import org.semprebon.kotlindicelib.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 
 /**
@@ -40,9 +40,11 @@ class SerializerTest : TestSupport {
                 serializer.deserialize("4d6[k3]"))
     }
 
-    @Test(expected= Serializer.ParseException::class)
+    @Test
     fun deserializeInvalidDie() {
-        serializer.deserialize("du")
+        assertThrows<Serializer.ParseException> {
+            serializer.deserialize("du")
+        }
     }
 
     @Test
@@ -50,9 +52,11 @@ class SerializerTest : TestSupport {
             serializer.deserialize("4d6[L3]"))
     }
 
-    @Test(expected= Serializer.ParseException::class)
+    @Test
     fun deserializeInvalidTerm() {
-        serializer.deserialize("d6++")
+        assertThrows<Serializer.ParseException> {
+            serializer.deserialize("d6++")
+        }
     }
 
     @Test
