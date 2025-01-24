@@ -1,5 +1,6 @@
 package org.semprebon.kotlindicelib
 
+
 import org.apache.commons.lang3.builder.CompareToBuilder
 import org.apache.commons.lang3.builder.EqualsBuilder
 

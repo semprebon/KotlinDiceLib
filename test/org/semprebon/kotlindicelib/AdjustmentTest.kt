@@ -2,6 +2,7 @@ package org.semprebon.kotlindicelib
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.semprebon.kotlindicelib.Probability
 
 /**
  * Test for Adjustment
